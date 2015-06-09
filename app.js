@@ -35,7 +35,7 @@ app.use(sessions({
   cookie: {
     path:'/',
   httpOnly: true,
-  domain:'.xxxxxxxxxxxx.xxx'
+  domain:'.vntrlst.com'
   }
 }));
 
@@ -135,7 +135,7 @@ app.post('/admax',function(req,res){
   var vlog = req.body.vlog;
   if(pas === vpas && log === vlog) {
     req.session.sKK76d = 'porC6S78x0XZP1b2p08zGlq';
-    res.redirect('http://xxxxxxxxxxxx.xxx/admax');
+    res.redirect('http://vntrlst.com/admax');
   }
   else {
     res.render('adminauth');
@@ -200,13 +200,13 @@ app.post('/drop/users',function(req,res){
       friends.remove({});
      console.log('USERS DB DROPPED FROM '+ req.ip);
      req.session.reset();
-     res.redirect('http://xxxxxxxxxxxx.xxx/admax');}
+     res.redirect('http://vntrlst.com/admax');}
     else {
-      res.redirect('http://xxxxxxxxxxxx.xxx');
+      res.redirect('http://vntrlst.com');
     }
   }
   else {
-    res.redirect('http://xxxxxxxxxxxx.xxx');
+    res.redirect('http://vntrlst.com');
   }
 });
 
@@ -327,7 +327,7 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-app.listen(80,'xxx.xxx.xxx.xxx');
+app.listen(80,'188.166.118.116');
 // zero downtime with naught
 if (process.send) process.send('online');
 process.on('message', function(message) {
