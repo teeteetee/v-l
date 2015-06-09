@@ -49,6 +49,10 @@ app.get('/',function(req,res) {
   var uacheck = userAgent.indexOf("iPhone") != -1 ;
   res.render('index');
 });
+
+app.get('/submit',function(req,res){
+  res.render('submit');
+});
  
 app.get('/dropplaces',function(req,res){
   if(req.ip === '188.226.189.180' || req.session.sKK76d === 'porC6S78x0XZP1b2p08zGlq')
