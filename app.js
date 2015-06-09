@@ -41,37 +41,13 @@ app.use(sessions({
 
 //SUBDOMAIN MAGIC 
 
-app.get('*',function(req,res,next){
-  if (req.ip === '188.226.189.180') {
-    console.log("c'est moi "+req.headers.host);
-    next();
-  } 
-  else{
-    next();
-  }
-});
 
-app.get('*', function(req,res,next) {  
-
-   if(req.headers.host === 'm.xxxxxxxxxxxx.xxx')  //if it's a sub-domain
-   {req.url = '/m' + req.url; 
-    console.log(req.url); //append some text yourself
-     next();}
-  else{
-   console.log('-------------- REQUEST --------------')
-   console.log('User-Agent: ' + req.headers['user-agent']);
-   console.log('URL: '+req.url);
-   console.log(req.ip);
-    next();}
-   });
-
-
- 
 
 app.get('/',function(req,res) {
   console.log('----- ON / ROUTE:'+JSON.stringify(req.session));
   var userAgent=req.headers['user-agent'];
   var uacheck = userAgent.indexOf("iPhone") != -1 ;
+  res.render('index');
 });
  
 app.get('/dropplaces',function(req,res){
